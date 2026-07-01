@@ -13,6 +13,11 @@ config MEMFAULT_NCS_PROJECT_KEY
 	  To load the project key at runtime from the Zephyr settings subsystem,
 	  enable CONFIG_MEMFAULT_PROJECT_KEY_SETTINGS.
 
+config MEMFAULT_NCS_HTTP_CLIENT_CONFIG_CUSTOM
+	bool
+	default y
+	select MEMFAULT_HTTP_CLIENT_CONFIG_BUILTIN
+
 choice
 	prompt "Choose built-in Memfault Device Info or custom implementation"
 	default MEMFAULT_NCS_DEVICE_INFO_BUILTIN
